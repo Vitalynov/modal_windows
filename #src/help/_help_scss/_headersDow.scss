@@ -1,0 +1,78 @@
+/*Header block*/
+//пример внесения миксина адаптивного шрифта и контейнера
+// .box p {
+//     @include adaptiv-font(16, 10);
+//     @include container (1170px)
+// }
+.header{
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    padding: 15px 0 0 0;
+    z-index: 10;
+
+    &-row{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+       
+    }
+    &-nav{
+        display: flex;
+        justify-content: space-between;
+    align-items: center;
+        &>li{
+            margin: 0 18px 0 0;
+        }
+        &>li:last-child{
+            margin: 0 0 0 0;
+        }
+        &__linck{
+            text-decoration: none;
+            font-size: 13px;
+            line-height: 1.2;
+            font-weight: 900;
+            letter-spacing: 0.025em;
+            color: #fff;
+            transition: .8s;
+            &:hover{
+                color: #00e0d0;
+            }
+        }
+    }
+    &-clon{
+        position: fixed;
+        opacity: 0;
+        top: -80px;
+        background: -moz-linear-gradient(left,  rgba(10,7,53,0.9) 0%, rgba(80,63,118,0.9) 100%); /* FF3.6-15 */
+                background: -webkit-linear-gradient(left,  rgba(10,7,53,0.9) 0%,rgba(80,63,118,0.9) 100%); /* Chrome10-25,Safari5.1-6 */
+                background: linear-gradient(to right,  rgba(10,7,53,0.9) 0%,rgba(80,63,118,0.9) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+                filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e60a0735', endColorstr='#e6503f76',GradientType=1 ); /* IE6-9 */
+        box-shadow: 0 5px 10px #000;
+        z-index: 100;
+    }
+}
+//анимация ссылок навигации
+.activeNav{
+    color: #00e0d0;
+}
+
+/*-- Анимация HEADER --*/
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        top: -80px;
+    }
+
+    to {
+        opacity: 1;
+        top: -13px;
+    }
+}
+
+.fadeInDown {
+    animation-name: fadeInDown;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+}

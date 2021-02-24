@@ -1,0 +1,9 @@
+{
+    "collBack":{
+        "title":"Форма обратной связи",
+        "content":"<form class=\"modal__form\" action=\"#\">\n                <input\n                    required\n                    placeholder=\"Ваше имя\"\n                    name=\"name\"\n                    type=\"text\"\n                    class=\"modal__input\"\n                />\n                <input\n                    required\n                    placeholder=\"Ваш номер телефона\"\n                    name=\"phone\"\n                    type=\"phone\"\n                    class=\"modal__input\"\n                />\n                <button class=\"btn btn_dark btn_min\">Перезвонить мне</button>\n            </form>"},
+    "calc":{
+        "title":"Калькулятор",
+        "content":"<form class=\"modal__form\" action=\"#\">\n                <input\n                    required\n                    placeholder=\"Ваше имя\"\n                    name=\"name\"\n                    type=\"text\"\n                    class=\"modal__input\"\n                />\n                <input\n                    required\n                    placeholder=\"Ваш номер телефона\"\n                    name=\"phone\"\n                    type=\"phone\"\n                    class=\"modal__input\"\n                />\n                <input\n                    required\n                    placeholder=\"Ваш номер телефона\"\n                    name=\"phone\"\n                    type=\"phone\"\n                    class=\"modal__input\"\n                />\n                <button class=\"btn btn_dark btn_min\">Отправить данные</button>\n            </form>"
+    }
+}

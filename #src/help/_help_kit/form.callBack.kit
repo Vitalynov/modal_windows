@@ -1,0 +1,54 @@
+<section id="contacts" class="contacts contentActiv">
+    <div class="container">
+      <h2 class="titele-h2 catalog-titele">Контакты</h2>
+      <p class="contacts-text text">
+        Вы можете позвонить нам по телефону: <b>8-800-200-61-96</b> (Звонок по
+        России бесплатный), написать на электронную почту E-mail:
+        <b>zabor33@inbox.ru</b> или оставить заявку на обратный звонок.
+      </p>
+      <div class="contacts-form">
+        <div class="contacts-form__column imgBox">
+          <img src="img/manager.png" alt="" />
+        </div>
+        <div class="contacts-form__column formBox">
+          <form
+            class="form"
+            id="form"
+            name="form"
+            action="mail.php"
+            method="POST"
+          >
+            <h2>Свяжитесь с нами</h2>
+            <div class="inputBox">
+              <input type="text" name="name" required="required" />
+              <span>Имя:</span>
+            </div>
+            <div class="inputBox">
+              <input type="text" name="phone" required="required" />
+              <span>Телефон:</span>
+            </div>
+            <div class="inputBox">
+              <input type="email" name="email" required="required" />
+              <span>E-mail:</span>
+            </div>
+            <div class="inputBox">
+              <textarea type="text" name="text" required="required"></textarea>
+              <span>Сообщение:</span>
+            </div>
+            <div class="inputBox">
+              <input type="submit" name="formBtn" value="Отправить" />
+            </div>
+          </form>
+        </div>
+        <!-- Popap:Спасибо за заявку!-->
+        <div class="popup" id="js-ThankYou">
+          <div class="clouse" id="js-CloseThankYou">&times</div>
+          <div class="popupContent">
+            <p>Спасибо за заявку!</p>
+            <p>Ожидайте звонка консультанта.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="map" class="mymap"></div>
+  </section>

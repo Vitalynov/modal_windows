@@ -1,0 +1,9 @@
+
+//ограничение контента
+@mixin container ($Width) {
+    display: block;
+    width: 100%;
+    max-width: $Width + 20px;
+    padding: 0 10px;
+    margin: 0 auto;
+}

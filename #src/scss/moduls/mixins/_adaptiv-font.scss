@@ -1,0 +1,14 @@
+//Адаптивный текст
+@mixin adaptiv-font($pcSize, $mobSize) {
+	$addSize: $pcSize - $mobSize;
+	$maxWidthTotal: $maxWidth - 320;
+	
+	@media (max-width: #{$maxWidth + px}) {
+		font-size: calc(
+			#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidthTotal})
+		);
+	}
+	@media (max-width: 320px) {
+		font-size: #{$mobSize + px};
+	}
+}

@@ -1,0 +1,172 @@
+//Подключение миксинов шрифтов
+@import 'moduls/mixins/_normalize';
+@import 'moduls/mixins/_font-face';
+//@import 'moduls/mixins/_fonts'; не включать!!! Шрифты только переносить.
+@import 'moduls/mixins/_container';
+//@import 'moduls/mixins/_adaptiv-fonts';
+
+/*-Подключение шрифтов-*/
+// Перенести шрифты из файла:#src/scss/moduls/mixins/_fonts.scss'
+@include font-face('AkzidenzGrotesk', 'AkzidenzGrotesk-boldCond', 700);
+//font-family: 'AkzidenzGrotesk', sans-serif;
+@include font-face('BebasNeue', 'BebasNeue-regular', 400);
+//font-family: 'BebasNeue', sans-serif;
+
+//Переменные
+$accent: #2692ff; //Цвет голубой.
+$text: #9c9c9c; //Цвет серый.
+$maxWidth: 1170; //Максимальная ширина контента для мексина adaptiv-font.
+
+//Пример внесения миксина адаптивного шрифта и контейнера
+// .box p {
+//     @include adaptiv-font(30, 20);
+//     font-size: 30px;
+//     @include container ($maxWidth)
+//     color: $blue;
+// }
+
+/*- Стили -*/
+/*- Глобальные стили-*/
+body {
+	font-size: 16px;
+	color: $text;
+	
+}
+
+.container {
+	@include container($maxWidth);
+}
+.page {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	display: flex;
+	flex-direction: column;
+}
+.open-btn {
+	font-size: 23px;
+	background-color: brown;
+	color:#fff;
+	padding: 7px 20px;
+	border-radius: 5px;
+	text-align: center;
+	display: inline-block;
+}
+.modal {
+	display: flex;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(0, 0, 0, 0.7);
+	visibility: hidden;
+	opacity: 0;
+	z-index: 500;
+	padding: 0 5px;
+	transition: all 0.2s ease-in;
+	&.show .modal__content {
+		transform: translateY(0%);
+	}
+}
+.modal__content {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	position: relative;
+	margin: auto;
+	width: 100%;
+	max-width: 600px;
+	min-height: 350px;
+    padding: 0 0 35px 0px;
+	border-radius: 4px;
+	background-color: #fff;
+	transform: translateY(-150%);
+	transition: all 0.3s 0.1s ease-out;
+}
+.modal__close {
+	display: inline-block;
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	font-size: 26px;
+	padding: 4px 10px;
+
+	border-radius: 4px;
+	cursor: pointer;
+	transition: all 0.3s ease-in;
+	&:hover {
+		color: #fff;
+		background-color: rgb(187, 0, 0);
+	}
+}
+.modal__title{
+	font-size: 26px;
+	color:rgb(56, 56, 56);
+	font-weight: 600;
+	text-align: center;
+	margin: 50px 0px;
+}
+.show {
+	visibility: visible;
+	opacity: 1;
+}
+
+/*- Header -*/
+@import 'moduls/01_headers';
+/*- Content -*/
+
+
+.modal__form {
+	display: flex;
+	flex-direction: column;
+    align-items: center;
+}
+.modal__input {
+	display: block;
+	margin: 20px auto 20px auto;
+	width: 280px;
+	height: 50px;
+	background: #fff;
+	box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+	border: none;
+	font-size: 18px;
+	text-align: center;
+	padding: 0 20px;
+	outline: 0;
+}
+.btn {
+	width: 220px;
+	height: 65px;
+    margin: 20px auto 20px auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #fff;
+	font-size: 18px;
+	font-weight: 700;
+	border: 1px solid rgba(0, 0, 0, 0.2);
+	border-radius: 4px;
+	box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+	cursor: pointer;
+
+	transition: 0.3s all;
+	outline: 0;
+}
+
+.btn_dark {
+	background-color: #303030;
+	color: #fff;
+	border: none;
+}
+.btn_min {
+	height: 50px;
+}
+.btn:hover {
+	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+}
+
+/*- Footer -*/
+@import 'moduls/15_footer';

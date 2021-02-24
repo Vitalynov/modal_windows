@@ -1,0 +1,236 @@
+section {
+  width: 100%;
+  height: 100vh;
+  display: block;
+}
+
+.contacts {
+  padding: 80px 0 0 0;
+
+  &-form {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #646464;
+
+    @media (max-width: 900px) {
+      justify-content: center;
+    }
+
+    &__column {
+      flex: 0 1 50%;
+
+      @media (max-width: 900px) {
+        flex: 0 1 70%;
+        padding: 5% 0;
+      }
+
+      @media (max-width: 430px) {
+        flex: 0 1 90%;
+      }
+    }
+  }
+
+  &-text {
+    padding: 2%;
+  }
+}
+
+.imgBox {
+  position: relative;
+  height: 500px;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #ff6005;
+    transform-origin: bottom;
+    transform: skewX(37deg) translateX(-6%);
+  }
+
+  &>img {
+    position: absolute;
+    bottom: 0;
+    height: 95%;
+    padding: 0 0 0 10%;
+  }
+
+  @media (max-width: 900px) {
+    display: none;
+  }
+}
+
+.formBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  form {
+    position: relative;
+    width: 100%;
+    padding: 0 0 0 75px;
+
+    @media (max-width: 900px) {
+      padding: 0 0 0 0px;
+    }
+
+    &>h2 {
+      color: #ff6005;
+      font-weight: 500;
+      //font-size: 28px;
+      @include adaptiv-font(28, 20);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 40px;
+
+      @media (max-width: 330px) {
+        letter-spacing: 1.5px;
+        margin-bottom: 20px;
+      }
+    }
+
+    .inputBox {
+      position: relative;
+      margin-bottom: 40px;
+
+      @media (max-width: 430px) {
+        margin-bottom: 25px;
+      }
+    }
+
+    .inputBox:last-child {
+      margin-bottom: 0;
+    }
+
+    .inputBox input,
+    .inputBox textarea {
+      position: relative;
+      background: transparent;
+      outline: none;
+      border: none;
+      width: 85%;
+      color: #fff;
+      padding-bottom: 10px;
+      font-size: 16px;
+      letter-spacing: 1px;
+      font-weight: 300;
+      border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+
+      @media (max-width: 900px) {
+        width: 100%;
+      }
+    }
+
+    // &.inputBox textarea {
+    //   width: 100%;
+    // }
+    .inputBox input[type="submit"] {
+      padding: 8px 20px;
+      margin-top: -10px;
+      width: 200px;
+      cursor: pointer;
+      background: #ff6005;
+      color: #fff;
+      font-size: 18px;
+      font-weight: 400;
+      border: none;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      border-radius: 5px;
+
+      @media (max-width: 430px) {
+        padding: 8px 13px;
+        margin-top: -10px;
+        width: 135px;
+        font-size: 12px;
+        letter-spacing: 3px;
+      }
+
+      &:focus {
+        background: #fff;
+        color: #ff6005;
+      }
+    }
+
+    .inputBox span {
+      position: absolute;
+      left: 0;
+      font-size: 16px;
+      font-weight: 300;
+      display: inline-block;
+      pointer-events: none;
+      letter-spacing: 1px;
+      color: rgba(255, 255, 255, 0.5);
+      transition: 0.3s;
+    }
+
+    .inputBox input:focus~span,
+    .inputBox textarea:focus~span,
+    .inputBox input:valid~span,
+    .inputBox textarea:valid~span {
+      transform: translateY(-24px);
+      color: #ff6005;
+      font-size: 14px;
+    }
+
+    .inputBox input:focus,
+    .inputBox textarea:focus,
+    .inputBox input:valid,
+    .inputBox textarea:valid {
+      border-bottom-color: #fff;
+    }
+  }
+}
+
+.popupContent {
+  position: absolute;
+  padding: 10px;
+  height: 30%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+
+  &>p {
+    font-family: "PT Sans", sans-serif;
+    color: #646464;
+    font-weight: 600;
+    //font-size: 24px;
+    @include adaptiv-font(24, 16);
+    letter-spacing: 2px;
+    line-height: 36px;
+  }
+}
+
+.mymap {
+  height: 35em;
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  margin-top: 3em;
+  margin-bottom: 0em;
+  //box-shadow: 0px 1px 20px #000;
+  //border: 2px solid gray;
+  overflow: hidden;
+}
+
+.map__pic {
+  width: 62px;
+  height: 32px;
+  vertical-align: middle;
+}
+
+.map__red {
+  color: #053e00;
+  padding: 0 0 0 10px;
+}
